@@ -1,24 +1,25 @@
 /* eslint-disable no-unused-vars */
 import Phaser from 'phaser'
-import fondo from './fondo.jpg'
-import lineas from './lineas.jpg'
-import pelota from './pelota.png'
+import fondoImg from './fondo.jpg'
+// import lineasImg from './lineas.jpg'
+// import pelotaImg from './pelota.png'
 export class Game extends Phaser.Scene {
   constructor () {
     super({ key: 'game' })
   }
 
   preload () {
-    this.load.image('fondo', fondo)
-    // this.load.image('lineas', lineas)
-    // this.load.image('pelota', pelota)
+    this.load.image('fondo', fondoImg)
+    // necesario un servidor para servir las imágenes (Live Server VSCode sirve, o cualquiera en puerto 5050 con cors all)
+    this.load.image('lineas', '//127.0.0.1:5500/src/assets/lineas.jpg')
+    this.load.image('pelota', '//127.0.0.1:5500/src/assets/pelota.png')
   }
 
   create () {
     this.physics.world.setBoundsCollision(false, false, true, true)
     this.add.image(750, 400, 'fondo')
 
-    this.canoa1 = this.physics.add.image(100, 400, 'lineas').setImmovable()
+    this.canoa1 = this.physics.add.sprite(100, 400, 'lineas').setImmovable()
     this.canoa1.body.allowGravity = false
     this.canoa1.setCollideWorldBounds(true)
 
