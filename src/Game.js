@@ -1,16 +1,8 @@
-/* eslint-disable no-unused-vars */
 import Phaser from 'phaser'
-import fondoImg from './fondo.jpg'
-// import lineasImg from './lineas.jpg'
-// import pelotaImg from './pelota.png'
 export class Game extends Phaser.Scene {
-  constructor () {
-    super({ key: 'game' })
-  }
-
   preload () {
-    this.load.image('fondo', fondoImg)
     // necesario un servidor para servir las imágenes (Live Server VSCode sirve, o cualquiera en puerto 5050 con cors all)
+    this.load.image('fondo', '//127.0.0.1:5500/src/assets/fondo.jpg')
     this.load.image('lineas', '//127.0.0.1:5500/src/assets/lineas.jpg')
     this.load.image('pelota', '//127.0.0.1:5500/src/assets/pelota.png')
   }
