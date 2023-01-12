@@ -1,7 +1,7 @@
 import Phaser from 'phaser'
 export class Game extends Phaser.Scene {
   preload () {
-    // necesario un servidor para servir las imágenes (Live Server VSCode sirve, o cualquiera en puerto 5050 con cors all)
+    // necesario un servidor para servir las imágenes (Live Server VSCode sirve, o cualquiera en puerto 5500 con cors all)
     this.load.image('fondo', '//127.0.0.1:5500/src/assets/fondo.jpg')
     this.load.image('lineas', '//127.0.0.1:5500/src/assets/lineas.jpg')
     this.load.image('pelota', '//127.0.0.1:5500/src/assets/pelota.png')
